@@ -50,3 +50,23 @@ function deplacement(event) {
 }
 
 document.onkeyup = deplacement;
+
+let ligneMob = 1;
+let colonneMob = 1;
+
+function deplacementMob() {
+    if (ligneMob < 5 ) {
+        ligneMob++; 
+    }
+    if (ligneMob == 5 && (colonneMob > 0 && colonneMob < 5)) {
+        colonneMob++; 
+    }
+    if (colonneMob == 5 && ligneMob >= 5) {
+        ligneMob--; 
+    }
+    console.log("+1")
+    let mob = document.querySelector(".mob");
+    mob.style.gridRow = ligneMob;
+    mob.style.gridColumn = colonneMob;
+}
+setInterval(deplacementMob,1000)
