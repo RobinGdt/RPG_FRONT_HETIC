@@ -1,5 +1,6 @@
 body {
-  max-width: 1440px;
+  width: 1440px;
+  height: 100vh;
   margin: 30px;
   background-color: #555555;
   font-family: Arial, Helvetica, sans-serif;
@@ -26,13 +27,15 @@ body {
   margin-top: 50px;
 }
 .screen {
-  width: 900px;
-  height: 460px;
+  width: 972px;
+  height: 480px;
   border: 12px solid black;
   margin-right: 60px;
   display: grid;
-  grid-template-columns: repeat(30,30px);
-  grid-template-rows: repeat(15,30px);
+  grid-template-columns: repeat(30,32px);
+  grid-template-rows: repeat(15,32px);
+  background-image: url(Map001.png);
+  background-size: 960px;
 }
 .load {
   width: 180px;
@@ -76,4 +79,7 @@ body {
     }
 .personnage{
     background-color: darkblue;
+}
+.mob{
+    background-color:yellow;
 }
