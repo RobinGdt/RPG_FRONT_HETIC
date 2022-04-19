@@ -149,7 +149,7 @@ function texte(){
         info.style.backgroundColor = "rgba(0, 0, 0, 0.616)";
         info.style.color = "white";
         info.innerHTML = '<a> QUETE : Trouvez toutes les croix présentes sur les map pour accéder à un nouveau sort.</a>';
-        setTimeout(function(){ text.innerHTML = '<img src="assets/shibacoin.png" id="shibacoin"><h3>Bonne chance trou d\'bite</h3></br>' }, 2500);
+        setTimeout(function(){ text.innerHTML = '<img src="assets/shibacoin.png" id="shibacoin"><h3>Bonne chance pour cette quête</h3></br>' }, 2500);
 
  
     }if(keys[78]){
@@ -164,7 +164,7 @@ function texteCatGolri(){
     text.style.backgroundColor = 'rgba(0, 0, 0, 0.616)';
     setTimeout(function(){ text.innerHTML = ' <img src="assets/cat_golri.png" id="shibacoin"><h1>WOUF</h1>' }, 500);
     setTimeout(function(){ text.innerHTML = ' <img src="assets/cat_golri.png" id="shibacoin"><h1>WAF WAF</h1>' }, 1500);
-    setTimeout(function(){ text.innerHTML = ' <img src="assets/cat_golri.png" id="shibacoin"><h3>mdr enfait jo souis un chat</h3>' }, 2500);
+    setTimeout(function(){ text.innerHTML = ' <img src="assets/cat_golri.png" id="shibacoin"><h3>aide moi à retrouver mon maître !</h3>' }, 2500);
 
     
     console.log(text)
@@ -175,7 +175,7 @@ function textePalma(){
     text.style.backgroundColor = 'rgba(0, 0, 0, 0.616)';
     setTimeout(function(){ text.innerHTML = ' <img src="assets/dede.png" id="dede"><h1>beh</h1>' }, 500);
     setTimeout(function(){ text.innerHTML = ' <img src="assets/dede.png" id="dede"><h1>...</h1>' }, 1500);
-    setTimeout(function(){ text.innerHTML = ' <img src="assets/dede.png" id="dede"><h1>Jmen branle ?</h1>' }, 2500);
+    setTimeout(function(){ text.innerHTML = ' <img src="assets/dede.png" id="dede"><h1>c\'est pas mon problème ?</h1>' }, 2500);
 
 
 console.log(text)
