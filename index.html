@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="http://fonts.cdnfonts.com/css/pf-tempesta-seven" rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
@@ -11,22 +12,42 @@
 
     <div class="container">
         <div class="infos">
-            <div class="map"></div>
-            <div class="info"></div>
+            <div class="map">
+                <div class="localisation">
+                    <div id="triangle-1"></div>
+                    <div id="triangle-2"></div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="quetes"></div>
+            </div>
             <div class="text"></div>
         </div>
-        <div class="screen">
-            <div class="mob"></div>
-            <div class="personnage"></div>
-        </div>
-        <div class="tools">
+        <canvas class="screen" id="canvas1">
+            
+        </canvas>
+       <div class="tools"> 
             <div class="load"></div>
-            <div class="inventory"></div>
-            <div class="command"></div>
+            <div class="inventory">
+            </div>
+            <button id="appendPotion">potion+</button>
+                <button id="appendPotionMana">potionMana+</button> 
+            <div class="command">
+                <div class="haut"><img id="z" src="assets/z.png"></div>
+                <div class="gauche"><img id="q" src="assets/q.png"></div>
+                <div class="bas"><img id="s" src="assets/s.png"></div>
+                <div class="droite"><img id="d" src="assets/d.png"></div>
+                <div class="outils">
+                    <div class="inventaire"><img id="i" src="assets/i.png"></div>
+
+                </div>
+                <div class="attaque"><img id="spacebar" src="assets/spacebar.png"></div>
+            </div> 
         </div>
     </div>
 
-
-    <script src="main.js"></script>
+    <script src="JS/collisions.js"></script>
+    <script src="JS/main.js"></script>
+   <!--- <script src="JS/inventaire.js"></script> -->
 </body>
 </html>
