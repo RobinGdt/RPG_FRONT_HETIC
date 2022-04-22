@@ -1,69 +1,211 @@
 body {
-  width: 1440px;
-  height: 100vh;
-  margin: 30px;
-  background-color: #555555;
-  font-family: Arial, Helvetica, sans-serif;
+  max-width: 1440px;
+  background-image: url(./assets/chandelier.gif); 
+  font-family: 'PF Tempesta Seven', sans-serif;
 }
 .title {
   display: flex;
   justify-content: center;
-  font-size: 30px;
+  position: relative;
+  bottom: 20px;
+  font-size: 25px;
   color: white;
 }
 .container {
   display: flex;
+  margin: 0;
 }
-.infos {
-  width: 300px;
-}
-.map,
-.info {
-  width: 200px;
-  height: 200px;
+
+/* MAP ----------------- */
+
+.map {
+  display: grid;
+  grid-template-columns: repeat(5, 80px);
+  grid-template-rows: repeat(4, 40px);
+  width: 400px;
+  height: 160px;
   border: 4px solid #fff500;
+  background-image: url(assets/Mini_map.PNG);
+  background-size: 400px;
+  position: absolute;
+  left: 15px;
+  bottom: 0;
+}
+
+#triangle-1 {
+  margin-top: 10px;
+  margin-left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid rgb(255, 0, 0);
+}
+
+#triangle-2 {
+  margin-left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 10px solid rgb(202, 0, 0);
+}
+
+/* INFOS ----------------- */
+
+.infos {
+  width: 230px;
+}
+.info {
+  background-color:  rgba(0, 0, 0, 0.616);
+  width: 200px;
+  height: 440px;
+  border: 2px solid #fff500;
+  overflow:auto;
+  position: relative;
+  left: 10px;
+  bottom: 50px;
+}
+.quetes{
+  text-align: center;
+  margin-left: 10px;
+}
+.info > a {
+  font-size: 12px;
+  margin-left: 80px;
 }
 .info {
   margin-top: 50px;
 }
+
+/* SCREEN ----------------- */
+
+
 .screen {
+  position: relative;
   width: 972px;
   height: 480px;
-  border: 12px solid black;
+  border: 6px solid black;
   margin-right: 60px;
-  display: grid;
-  grid-template-columns: repeat(30,32px);
-  grid-template-rows: repeat(15,32px);
-  background-image: url(Map001.png);
-  background-size: 960px;
+  bottom: 50px;
+  left: 3%;
 }
+
+/* LOAD ----------------- */
+
+
 .load {
-  width: 180px;
+  width: 160px;
   height: 35px;
-  border: 4px solid #ff0000;
+  border: 2px solid #ff0000;
+  text-align: center;
 }
+
+/* INVENTAIRE ----------------- */
+
+
 .inventory {
-  width: 180px;
+  width: 160px;
+  color: white;
   height: 410px;
   margin-top: 20px;
   border: 4px solid brown;
-
   display: flex;
   flex-wrap: wrap;
+  flex-flow: column wrap;
+  background-color:  rgba(0, 0, 0, 0.616);
 }
+.inventory div{
+  border: 4px solid brown;
+  width: 60px;
+  height: 50px;
+}
+
+.box1{
+  grid-column-start:1;
+  grid-column-end: 4;
+  text-align: center;
+}
+
+.key{
+  width: 50px;
+  height: 50px;
+}
+.potion{
+  width: 50px;
+  height: 50px;
+}
+.potionMana{
+  width: 50px;
+  height: 50px;
+}
+
+/* COMMANDES ----------------- */
+
+
 .command {
-  width: 180px;
+  width: 160px;
   height: 90px;
   border: 4px solid #8f00ff;
   margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.616);
 }
-.text {
-  width: 530px;
-  height: 90px;
-  border: 4px solid white;
+
+.outils >.inventaire{
+  margin-left: 20px;
+  margin-top: 5px;
+
+}
+.haut, .bas, .gauche, .droite, .inventaire, .potion{
+  width: 20px;
+  height: 20px;
+}
+.attaque{
+  height: 15px;
+  width: 80px;
+  margin-left: 20px;
+}
+.bas, .gauche, .droite{
+  margin-top: 25px;
+}
+.gauche{
+margin-right: 5px;
+}
+.droite{
+  margin-left: 5px;
+}
+#z, #d, #s, #q, #i{
+  width: 30px;
+  height: 30px;
+}
+#spacebar{
+  height: 20px;
+  width: 85px;
+}
+.haut{
   position: relative;
-  left: 450px;
-  top: 40px;
+  left: 45px;
+  bottom: 10px;
+}
+
+/* TEXTE ----------------- */
+
+
+.text {
+  background-color:  rgba(0, 0, 0, 0.616);
+  width: 530px;
+  height: 140px;
+  border: 2px solid white;
+  position: absolute;
+  left: 530px;
+  bottom: 15px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  display: flex;
+
 }
 .element{
     width: 40px;
@@ -77,9 +219,28 @@ body {
 .inventory>* {
     margin: 5px;
     }
-.personnage{
-    background-color: darkblue;
+
+#shibacoin{
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
-.mob{
-    background-color:yellow;
+h3{
+  font-size: 22px;
+}
+#dede{
+  width: 200px;
+  height: 140px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#sdf{
+  width: 200px;
+  height: 140px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
