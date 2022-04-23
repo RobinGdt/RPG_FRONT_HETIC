@@ -83,16 +83,6 @@ function mana() {
   }
 }
 
-function recupMana(){
-  if(player.mana < 93){
-    setInterval(function() {
-      player.mana = player.mana + player.manaRegen;
-    },1000);
-  }else{
-    player.mana = 93;
-  }
-}
-
 function drawSprite(img, sX, sY, sW, sH, dX, dY, dW, dH) {
   ctx.drawImage(img, sX, sY, sW, sH, dX, dY, dW, dH);
 
@@ -120,7 +110,6 @@ setInterval(function () {
   xp();
   movePlayer();
   handlePlayerFrame();
-  recupMana();
   if (fire_ball_direction == "top") {
     fireballsTOP();
   }
@@ -199,7 +188,7 @@ function movePlayer() {
     yball = -20;
     player_ball_x = player.x;
     player_ball_y = player.y;
-    player.mana = player.mana - 50;
+    player.mana = player.mana - 15;
   }
   if (keys[83] && player.y < canvas.height - player.height && MoveBottom) {
     player.y += player.speed;
@@ -220,7 +209,7 @@ function movePlayer() {
       yball = 20;
       player_ball_x = player.x;
       player_ball_y = player.y;
-      player.mana = player.mana - 50;
+      player.mana = player.mana - 15;
     }
   } else if (
     player.frameY == 0 &&
@@ -238,7 +227,7 @@ function movePlayer() {
     yball = 20;
     player_ball_x = player.x;
     player_ball_y = player.y;
-    player.mana = player.mana - 50;
+    player.mana = player.mana - 15;
   }
   if (keys[81] && player.x > 0 && MoveLeft) {
     player.x -= player.speed;
@@ -259,7 +248,7 @@ function movePlayer() {
       yball = 8;
       player_ball_x = player.x;
       player_ball_y = player.y;
-      player.mana = player.mana - 50;
+      player.mana = player.mana - 15;
     }
   } else if (
     player.frameY == 3 &&
@@ -277,7 +266,7 @@ function movePlayer() {
     yball = 8;
     player_ball_x = player.x;
     player_ball_y = player.y;
-    player.mana = player.mana - 50;
+    player.mana = player.mana - 15;
   }
   if (keys[68] && player.x < canvas.width - player.width && MoveRight) {
     player.x += player.speed;
@@ -298,7 +287,7 @@ function movePlayer() {
       yball = 8;
       player_ball_x = player.x;
       player_ball_y = player.y;
-      player.mana = player.mana - 50;
+      player.mana = player.mana - 15;
     }
     if (player.mana <= 0) {
       console.log("vous n'avez plus de mana");
@@ -319,7 +308,7 @@ function movePlayer() {
     yball = 8;
     player_ball_x = player.x;
     player_ball_y = player.y;
-    player.mana = player.mana - 50;
+    player.mana = player.mana - 15;
   }
   if (player.x >= 768 || player.x <= 0 || player.y >= 368 || player.y <= 0) {
     ChangeMap(index_Y, index_X); // fonction de changement de map
@@ -334,27 +323,10 @@ function movePlayer() {
     degats = 40;
     fireArc.y += fireArc.speed;
   }
-
-  // if (keys[32] && player.frameY == 1) {
-  //   fireCircle(player.x + 17, player.y + 12);
-  //   player.mana -= 1;
-  // }
-  // if (keys[32] && player.frameY == 2) {
-  //   fireCircle((player.x += 55), player.y + 12);
-  //   player.mana -= 1;
-  //   Monst.hp -= fireArc.degats;
-  // }
-  // if (keys[32] && player.frameY == 3) {
-  //   fire.src = "assets/cercle_feu_rotate.png";
-  //   fireCircle((player.x -= 55), player.y + 12);
-  //   player.mana -= 1;
-  // }
   interactionMap1();
   interactionMap2();
   interactionMap14();
   pressButton();
-  // console.log("position player X : ", player.x);
-  // console.log("position player Y : ", player.y);
 }
 
 // FONCTION ANIMATION FRAME
@@ -369,18 +341,30 @@ function handlePlayerFrame() {
 var audio = new Audio("assets/Sounds/death_sound.wav");
 var audioPlay = new Audio("assets/Sounds/medieval.wav");
 
+function sound(){
+    load = document.querySelector('.load')
+    load.classList.toggle("soundOff")
+    load.innerHTML = "SOUND OFF"
+    musicStop();
+  if(load.classList == "load" ) {
+    load.innerHTML = "SOUND ON"
+    musicPlay();
+  }
+}
+
 function death() {
   window.location.href = "deathpage.html";
 }
 
-// function musicPlay(){
-//   audioPlay.play();
-// }
+function musicPlay(){
+  audioPlay.play();
+}
+function musicStop(){
+  audioPlay.currentTime = 0;
+  audioPlay.pause();
+}
 
-// if (Player_onMap == "Map001.png"){
-//   musicPlay();
-// };
-
-console.log("position player X : ", player.x);
-console.log("position player Y : ", player.y);
+if (Player_onMap == "Map001.png"){
+  musicPlay();
+};
 
