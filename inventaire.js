@@ -77,6 +77,9 @@ function activateInventory(event) {
       if (inventoryList[cursor] == "potion") {
         potionCounter -= 1;
         player.vie += 30;
+        if(player.vie == 145) {
+          ctx.fillRect(22.5, 12.5, 145, 10)
+        }
         pot_p.innerText = "Potion \n" + potionCounter;
         if (potionCounter == 0) {
           inventory.removeChild(pot_p);
